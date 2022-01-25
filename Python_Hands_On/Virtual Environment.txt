@@ -1,0 +1,41 @@
+
+->CREATE a VENV
+
+1) create a folder
+   >mkdir flask_demo
+
+2)    create a folder 'fd-venv' with all the data [ name of venv = 'fd-venv' ]
+      >python 3 -m venv fd-venv
+   
+3) Activate
+
+      on WINDOWS
+      C:\Users\admin\flask_demo>fd-venv\Scripts\activate
+
+      on MAC/ LINUX
+      flask_demo>source fd-venv/bin/activate
+
+4) Deactivate
+      >deactivate 
+
+
+->INSTALL/UNINSTALL REQ
+      >pip install -r req.txt
+      >pip uninstall -r req.txt
+
+
+
+
+
+->DELETE the venv
+1) delete the folder->
+   rmdir fd-venv /s [WINDOWS]
+   rm -rf fd-venv [LINUX]
+
+
+view the data
+WINDOWS
+       dir /A:D /B /S -> all the sublevel files
+       dir /A:D /B -> high level files
+LINUX
+       ls -ltr

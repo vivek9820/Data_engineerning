@@ -1,0 +1,40 @@
+docker images
+docker container ls -a
+docker container rm 'name'
+docker images rm 'name'  [OR -> docker rmi 'name]
+
+-> Pull Postgres
+docker pull postgres
+docker run --name retail_pg -e POSTGRES_PASSWORD=retail_password -d -v C:\Users\vspat\Projects\Internal\bootcamp\data-copier\retail_pg:/var/lib/postgresql/data -v C:\Users\vspat\Research\data\retail_db_json:/retail_db_json -p 5452:5432 postgres
+                                          OR
+
+docker run \
+  --name retail_pg \
+  -e POSTGRES_PASSWORD=itversity \
+  -d \
+  -v `pwd`/data/retail_db_json:/data/retail_db_json \
+  -v `pwd`/retail_pg:/var/lib/postgresql/data \
+  -p 5452:5432 \
+  postgres
+
+The above line handles the postgres files and copies it to the specified path
+
+
+
+POSTGRES-->
+
+[
+   \d -> lists the tables in database
+   \l -> lists the databases
+   \q -> to exit from the database
+]
+ 
+1) docker exec -it retail_pg psql -U postgres
+   it takes you to the postgres and here u can create user ,database etc.
+   a) Inside postgres=# CREATE DATABASE retail_db; [ to create a database ]
+   b) Inside postgres=# CREATE USER retail_user WITH ENCRYPTED PASSWORD 'retail_password'; [ to create a user ]
+   c) Inside postgres=# GRANT ALL PRIVILEGES ON DATABASE retail_db TO retail_user; [ grant privileges ]
+
+2) docker exec -it retail_pg psql -U retail_user -d retail_db
+   connect directly to the database
+

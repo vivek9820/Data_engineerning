@@ -1,0 +1,16 @@
+
+TO CONNECT THE PROJECT TO github REPO->
+
+git remote add origin https://github.com/vivek9820/data-copier-project-course.git
+git branch -M main    
+git push -u origin main
+
+[ authorize ] 
+
+git status
+
+TO SAVE THE CHANGES->
+
+git add .\app.py      
+git commit -m "playing"
+git push origin main 

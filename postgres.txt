@@ -1,0 +1,5 @@
+\l --> databases
+\d --> table
+\d table_name --> views the config of the table
+\c database_name --> switch to diff database
+\i file_path --> to execute that sql code
